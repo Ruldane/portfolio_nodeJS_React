@@ -12,7 +12,6 @@ class App extends React.Component {
     static async getInitialProps({Component, ctx}) {
         let pageProps = {};
         const user = process.browser ? await Auth0.clientAuth() : await Auth0.serverAuth(ctx.req);
-
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx);
         }
@@ -23,7 +22,6 @@ class App extends React.Component {
     }
 
     render() {
-        debugger
         const { Component, pageProps, auth } = this.props;
         return <Component {...pageProps} auth={auth}/>
     }

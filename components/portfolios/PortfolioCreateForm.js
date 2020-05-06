@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import PortInput from '../form/PortInput';
 import PortDate from '../form/PortDate';
-import {Button} from 'reactstrap'
+import {Button, Alert} from 'reactstrap'
 
 import moment from 'moment';
 
@@ -83,6 +83,10 @@ const PortfolioCreateForm = (props) => (
                         name="endDate"
                         canBeDisabled={true}
                         component={PortDate} />
+                    {props.error &&
+                    <Alert color="danger">
+                        {props.error}
+                    </Alert>}
                     <Button outline color="success" size="lg" type="submit" disabled={isSubmitting}>
                         Create
                     </Button>

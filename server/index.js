@@ -17,7 +17,7 @@ const authService = require('./services/auth')
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
-const handle = app.getRequestHandler(app);
+const handle = app.getRequestHandler();
 
 const secretData = [
     {
@@ -39,6 +39,7 @@ app.prepare().then(() => {
 
     const server = express();
 
+
     server.use(bodyParser.json())
 
     server.use('/api/v1/books', bookRoutes)
@@ -54,15 +55,15 @@ app.prepare().then(() => {
         return res.json(secretData)
     })
 
+    server.all('*', (req, res) => {
+        return handle(req, res);
+    })
+
     server.use(function (err, req, res) {
         if (err.name === 'UnauthorizedError') {
             res.status(401).send({title: "Unauthorized", detail: 'Unauthorized access'});
         }
     });
-
-    server.all('*', (req, res) => {
-        return handle(req, res);
-    })
 
     const PORT = process.env.PORT || 3000;
     server.listen(PORT, (err) => {

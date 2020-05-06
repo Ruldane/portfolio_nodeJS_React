@@ -8,9 +8,18 @@ routeur.post('',
     authService.checkRole('siteOwner'),
     portfolioController.savePortfolio);
 
-routeur.get('',
+routeur.get('', portfolioController.getPortfolio);
+
+routeur.get('/:id', portfolioController.getPortfolioById);
+
+routeur.patch('/:id',
     authService.checkJTW,
     authService.checkRole('siteOwner'),
-    portfolioController.getPortfolio)
+    portfolioController.upddatePortfolio);
+
+routeur.delete('/:id',
+    authService.checkJTW,
+    authService.checkRole('siteOwner'),
+    portfolioController.deletePortfolio)
 
 module.exports = routeur;
