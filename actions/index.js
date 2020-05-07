@@ -9,7 +9,6 @@ const axiosInstance = axios.create({
 
 const setAuthHeader = (req) => {
     const token = req? getCookieFromReq(req, 'jwt') :Cookies.getJSON('jwt');
-
     if (token) {
         return {headers: {'authorization': `Bearer ${token}`}}
     }
@@ -58,5 +57,17 @@ export const createPortfolio =  async (portfolioData) => {
         return res.data
     }).catch((error)=> {
             return rejectPromise(error)
+    })
+}
+
+export const updatePortfolio = async (portfolioData) => {
+    return await axiosInstance.patch(`/portfolios/${portfolioData._id}`, portfolioData, setAuthHeader())
+        .then(response => response.data)
+        .catch(error => rejectPromise(error))
+}
+
+export const deletePortfolio = (portfolioId) => {
+    return axiosInstance.delete(`/portfolios/${portfolioId}`, setAuthHeader()).then((res) =>{
+        return res.data;
     })
 }

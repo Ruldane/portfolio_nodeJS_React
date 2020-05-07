@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/main.scss";
 require('react-datepicker/dist/react-datepicker.css')
 
-
+const namespace = 'http://localhost:3000'
 
 class App extends React.Component {
 
@@ -16,7 +16,9 @@ class App extends React.Component {
             pageProps = await Component.getInitialProps(ctx);
         }
 
-        const auth = {user, isAuthenticated: !!user}
+        const isSiteOwner = user && user[namespace+'/roles'] === 'siteOwner';
+
+        const auth = {user, isAuthenticated: !!user, isSiteOwner}
 
         return { pageProps, auth };
     }

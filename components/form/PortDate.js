@@ -5,11 +5,14 @@ import { FormGroup, Label, Button } from 'reactstrap';
 import moment from 'moment';
 
 export default class PortDate extends React.Component {
+
     constructor(props) {
+        const isHidden = !props.initialDate;
+
         super(props);
         this.state = {
             dateValue: new Date(),
-            isHidden:false
+            isHidden: isHidden
         };
     }
 

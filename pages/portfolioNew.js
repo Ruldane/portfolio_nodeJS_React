@@ -3,9 +3,20 @@ import BaseLayout from "../components/layouts/BaseLayout";
 import BasePage from "../components/BasaPage";
 import PortfolioCreateForm from '../components/portfolios/PortfolioCreateForm'
 import {Row, Col} from 'reactstrap'
+import Router from 'next/router'
+import moment from 'moment'
 
 import {createPortfolio} from '../actions'
-import { Router } from '../routes'
+
+const INITIAL_VALUES = {
+    title: '',
+    company: '',
+    location: '',
+    position: '',
+    description: '',
+    startDate: moment(),
+    endDate: moment(),
+};
 
 import withAuth from '../components/hoc/withAuth'
 
@@ -25,7 +36,7 @@ class PortfolioNew extends React.Component {
         createPortfolio(portfolioData).then((portfolio) =>{
             setSubmitting(false);
             this.setState({error: undefined})
-            Router.pushRoute('/portfolios')
+            Router.push('/portfolios')
         }).catch((err) => {
             const error = err.message || 'Server Error'
             setSubmitting(false);
@@ -39,10 +50,14 @@ class PortfolioNew extends React.Component {
         return (
 
             <BaseLayout {...this.props.auth}>
-                <BasePage className="portfolio-create-paget-page" title={"create New Portfolio"}>
+                <BasePage className="portfolio-create-paget-page" title={"create New portfolio"}>
                     <Row>
                         <Col md="6">
-                            <PortfolioCreateForm onSubmit={this.savePortfolio} error={error}/>
+                            <PortfolioCreateForm
+                                onSubmit={this.savePortfolio}
+                                error={error}
+                                initialValues={INITIAL_VALUES}
+                            />
                         </Col>
                     </Row>
                 </BasePage>

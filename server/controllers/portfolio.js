@@ -3,13 +3,14 @@ const Portfolio = require('../models/portfolio')
 
 exports.getPortfolioById = (req,res) => {
     const portfolioId = req.params.id
-
-    Portfolio.findById(portfolioId, (error, foundPortfolio)=> {
-    if (error) {
-        return res.status(422).send(error)
-    }
-    return res.json(foundPortfolio)
-    })
+    Portfolio.findById(portfolioId)
+        .select('-__v')
+        .exec((error, foundPortfolio) => {
+            if (error) {
+                return res.status(422).send(error)
+            }
+            return res.json(foundPortfolio)
+        })
 }
 
 // save book
@@ -30,12 +31,14 @@ exports.savePortfolio = (req, res)=> {
 // get book
 exports.getPortfolio = (req, res) => {
     // {} means all book
-    Portfolio.find({}, (err, allPortfolios)=> {
-        if (err){
-            return res.status(422).send(err)
-        }
-        return res.json(allPortfolios);
-    })
+    Portfolio.find({})
+        .sort({'startDate': 1})
+        .exec((error, allPortfolios)=> {
+            if (error){
+                return res.status(422).send(error)
+            }
+            return res.json(allPortfolios);
+        })
 }
 
 // update data
