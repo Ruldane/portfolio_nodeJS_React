@@ -9,9 +9,11 @@ const BaseLayout = props => {
     const headerType = props.headerType || 'default';
     return (
         <React.Fragment>
-            //header page
             <Head>
                 <title>Laurent Nizzoli</title>
+                <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                      rel="stylesheet" />
             </Head>
 
             <div className="layout-container">

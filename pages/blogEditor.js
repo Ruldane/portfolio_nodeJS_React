@@ -11,7 +11,7 @@ class BlogEditor extends React.Component {
         return (
 
             <BaseLayout {...this.props.auth}>
-                <BasePage className="about-page" title={"I am blog editor page"}>
+                <BasePage containerClass="editor-wrapper" className="blog-editor-page" title={"I am blog editor page"}>
                     <SlateEditor/>
                 </BasePage>
             </BaseLayout>
