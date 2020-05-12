@@ -41,19 +41,19 @@ const PortfolioCreateForm = ({initialValues, onSubmit, error}) => (
                         component={PortInput}
                     />
                     <Field
-                        label="Company"
+                        label="Entreprise"
                         type="text"
                         name="company"
                         component={PortInput}
                     />
                     <Field
-                        label="Location"
+                        label="Localisation"
                         type="text"
                         name="location"
                         component={PortInput}
                     />
                     <Field
-                        label="Position"
+                        label="Poste"
                         type="text"
                         name="position"
                         component={PortInput}
@@ -65,12 +65,12 @@ const PortfolioCreateForm = ({initialValues, onSubmit, error}) => (
                         component={PortInput}
                     />
                     <Field
-                        label="Start Date"
+                        label="Date de ébut"
                         name="startDate"
                         initialDate={initialValues.startDate}
                         component={PortDate} />
                     <Field
-                        label="End Date"
+                        label="Date de fin"
                         name="endDate"
                         canBeDisabled={true}
                         initialDate={initialValues.endDate}
@@ -80,7 +80,7 @@ const PortfolioCreateForm = ({initialValues, onSubmit, error}) => (
                         {error}
                     </Alert>}
                     <Button outline color="success" size="lg" type="submit" disabled={isSubmitting}>
-                        Create
+                        Créer
                     </Button>
                 </Form>
             )}

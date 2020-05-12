@@ -81,12 +81,12 @@ export default class Header extends React.Component {
                         <DropdownItem>
                             <BsNavLink className="port-dropdown-item"
                                        route="/blogEditor"
-                                       title="Create a Blog" />
+                                       title="Créer" />
                         </DropdownItem>
                         <DropdownItem>
                             <BsNavLink className="port-dropdown-item"
                                        route="/blogs/userBlogs"
-                                       title="Blogs Dashboard" />
+                                       title="Dashboard" />
                         </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
@@ -118,7 +118,7 @@ export default class Header extends React.Component {
                                 <BsNavLink route="/" title="Home"/>
                             </NavItem>
                             <NavItem className="port-navbar-item">
-                                <BsNavLink route="/about" title="About"/>
+                                <BsNavLink route="/about" title="À propos"/>
                             </NavItem>
                             <NavItem className="port-navbar-item">
                                 <BsNavLink route="/portfolios" title="Portfolios"/>

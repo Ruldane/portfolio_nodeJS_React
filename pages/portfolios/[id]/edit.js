@@ -55,7 +55,7 @@ class PortfolioEdit extends React.Component {
         return (
 
             <BaseLayout {...this.props.auth}>
-                <BasePage className="portfolio-create-paget-page" title={"Edit portfolio"}>
+                <BasePage className="portfolio-create-paget-page" title={"Éditer le Portfolio"}>
                     <Row>
                         <Col md="6">
                             <PortfolioCreateForm

@@ -52,8 +52,8 @@ class Portfolios extends React.Component {
                 <PortFolioCard portfolio={portfolio}>
                     { isAuthenticated && isSiteOwner &&
                     <React.Fragment>
-                        <Button onClick={(event) => this.navigateToEdit(portfolio._id, event)} color="warning">Edit</Button>{' '}
-                        <Button onClick={(event) => this.displayDeleteWarning(portfolio._id, event)} color="danger">Delete</Button>
+                        <Button onClick={(event) => this.navigateToEdit(portfolio._id, event)} color="warning">Éditer</Button>{' '}
+                        <Button onClick={(event) => this.displayDeleteWarning(portfolio._id, event)} color="danger">Supprimer</Button>
                     </React.Fragment>
                     }
                 </PortFolioCard>
@@ -71,7 +71,7 @@ class Portfolios extends React.Component {
                     {isAuthenticated && isSiteOwner &&
                     <Button color="success"
                             onClick={() => Router.push('/portfolioNew')}
-                            className='create-port-btn'>Create Portfolio
+                            className='create-port-btn'>Créer Portfolio
                     </Button>
                     }
                     <Row>

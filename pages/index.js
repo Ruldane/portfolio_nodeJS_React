@@ -13,7 +13,7 @@ class Index extends React.Component {
             isFlipping:false,
         }
 
-        this.roles= ['Développeur front-end', 'Tech Lover', 'Team player', 'Hard worker']
+        this.roles= ['Développeur front-end', 'Tech Lover', 'Travail en équipe', 'Hard worker']
     }
 
     componentDidMount() {
@@ -50,9 +50,9 @@ class Index extends React.Component {
                                     <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
                                         <div className="front">
                                             <div className="hero-section-content">
-                                                <h2> Full Stack Web Developer </h2>
+                                                <h2> Développeur Web </h2>
                                                 <div className="hero-section-content-intro">
-                                                    Have a look at my portfolio and job history.
+                                                    Prenez le temps de regarder mon site web
                                                 </div>
                                             </div>
                                             <img className="image" src="/images/section-1.png"/>
@@ -65,7 +65,7 @@ class Index extends React.Component {
                                             <div className="hero-section-content">
                                                 <h2> Get Your Projects Done </h2>
                                                 <div className="hero-section-content-intro">
-                                                   Professionnel et top qualtié dans le développement web
+                                                   Top professionnal in web development
                                                 </div>
                                             </div>
                                             <img className="image" src="/images/section-2.png"/>
@@ -80,10 +80,10 @@ class Index extends React.Component {
                             <Col md="6" className="hero-welcome-wrapper">
                                 <div className="hero-welcome-text">
                                     <h1>
-                                        node-lipsum is a NodeJS Module and Command-line Interface combo that provides a service API for lipsum.com,
-                                        which you may or may not know as the go-to place to generate arbitrary dummy text whenever you need it.
-                                        Node-lipsum can be used right from the command line by invoking node-lipsum (assuming you've installed it globally) or
-                                        as a node module.
+                                        Après avoir passé un titre professionnel de développeur logiciel j'ai intégré
+                                        une licence en développement orientée sécurité informatique.
+                                        Actuellement chez Actif Solution, je travaille sur une application web, eScale.
+                                        Les technologies utilisées sont React JS et Symfony.
                                     </h1>
                                 </div>
                                 <ReactTyped
@@ -99,8 +99,8 @@ class Index extends React.Component {
                                         />
                                 <div className="hero-welcome-bio">
                                     <h1>
-                                        {isAuthenticated && <span><br/><b>{user.name}<br/></b></span>}
-                                        Let's take a look on my work.
+                                        {isAuthenticated && <span><br/><b><p>Bonjour {user.name} </p><br/></b></span>}
+                                        N'hésitez pas à me contacter pour plus d'informations
                                     </h1>
                                 </div>
                             </Col>
