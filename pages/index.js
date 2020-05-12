@@ -73,7 +73,6 @@ class Index extends React.Component {
                                                 <div className="shadow-inner"> </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </Col>
