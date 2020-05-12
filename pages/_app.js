@@ -3,6 +3,8 @@ import Auth0 from '../services/auth0'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/main.scss";
+import 'react-toastify/dist/ReactToastify.css';
+
 require('react-datepicker/dist/react-datepicker.css')
 
 const namespace = 'http://localhost:3000'

@@ -1,11 +1,13 @@
 import Header from '../shared/Header';
 import React from 'react'
 import Head from "next/head";
+import { ToastContainer } from 'react-toastify';
+
 
 
 const BaseLayout = props => {
 
-    const {className, children, isAuthenticated, user} = props;
+    const {className, children, isAuthenticated, user, isSiteOwner} = props;
     const headerType = props.headerType || 'default';
     return (
         <React.Fragment>
@@ -17,12 +19,16 @@ const BaseLayout = props => {
             </Head>
 
             <div className="layout-container">
-                <Header className={`port-nav-${headerType}`} isAuthenticated={isAuthenticated} user={user}/>
+                <Header
+                    className={`port-nav-${headerType}`}
+                    isAuthenticated={isAuthenticated} user={user}
+                    isSiteOwner={isSiteOwner}/>
                 <main className={`cover ${className}`}>
                     <div className="wrapper">
                         {children}
                     </div>
                 </main>
+
             </div>
 
         </React.Fragment>

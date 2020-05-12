@@ -9,15 +9,36 @@ class Index extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+            isFlipping:false,
+        }
+
         this.roles= ['Développeur front-end', 'Tech Lover', 'Team player', 'Hard worker']
+    }
+
+    componentDidMount() {
+        this.animateCard()
+    }
+
+    componentWillUnmount() {
+        this.cartAnimationInterval && clearInterval(this.cartAnimationInterval);
+    }
+
+    animateCard() {
+        this.cartAnimationInterval = setInterval(() => {
+            this.setState({
+                isFlipping: !this.state.isFlipping
+            })
+        }, 3000)
     }
 
     render () {
 
         const {isAuthenticated, user} = this.props.auth;
+        const {isFlipping} = this.state;
 
         return (
-            <BaseLayout className="cover" {...this.props.auth} headerType={"index"}>
+            <BaseLayout className={`cover ${isFlipping ? 'cover-1' : 'cover-0'}`} {...this.props.auth} headerType={"index"}>
                 <div className="main-section">
                     <div className="background-image">
                         <img src="/images/background-index.png" />
@@ -26,8 +47,8 @@ class Index extends React.Component {
                         <Row>
                             <Col md="6">
                                 <div className="hero-section">
-                                    <div className={`flipper`}>
-                                        <div className="back">
+                                    <div className={`flipper ${isFlipping ? 'isFlipping' : ''}`}>
+                                        <div className="front">
                                             <div className="hero-section-content">
                                                 <h2> Full Stack Web Developer </h2>
                                                 <div className="hero-section-content-intro">
@@ -35,10 +56,24 @@ class Index extends React.Component {
                                                 </div>
                                             </div>
                                             <img className="image" src="/images/section-1.png"/>
-                                            <div className="shadow-custom">
+                                            <div className="shadow-custom ">
                                                 <div className="shadow-inner"> </div>
                                             </div>
                                         </div>
+
+                                        <div className="back">
+                                            <div className="hero-section-content">
+                                                <h2> Get Your Projects Done </h2>
+                                                <div className="hero-section-content-intro">
+                                                   Professionnel et top qualtié dans le développement web
+                                                </div>
+                                            </div>
+                                            <img className="image" src="/images/section-2.png"/>
+                                            <div className="shadow-custom shadow-custom-2">
+                                                <div className="shadow-inner"> </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </Col>

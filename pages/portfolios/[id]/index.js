@@ -6,12 +6,12 @@ export default class PortFolioCard extends React.Component {
 
     constructor(props) {
         super(props);
-
-        const {portfolio} = this.props;
     }
 
     render() {
 
+        const {portfolio} = this.props;
+        const {isAuthenticated, isSiteOwner} = this.props.auth;
         return (
             <span>
                         <Card className="portfolio-card">

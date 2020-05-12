@@ -1,6 +1,7 @@
 @import "./shared/fonts";
 @import "./shared/colors";
-@import "./blog";
+@import "./shared/mixins";
+
 
 //Header
 @import "./_header";
@@ -8,6 +9,10 @@
 //Page
 @import "./index";
 @import "./_portfolios.scss";
+@import "about";
+@import "./blog";
+@import "./slate-editor";
+@import "./_cv.scss";
 
 html, body {
   height: 100%;

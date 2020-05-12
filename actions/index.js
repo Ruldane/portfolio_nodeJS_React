@@ -71,3 +71,50 @@ export const deletePortfolio = (portfolioId) => {
         return res.data;
     })
 }
+
+// BLOG ACTIONS
+export const createBlog = (blogData, lockId) => {
+    return axiosInstance.post(`/blogs?lockId=${lockId}`, blogData, setAuthHeader())
+        .then(response => response.data)
+        .catch(error => rejectPromise(error))
+}
+
+export const getBlogById = async (blogId) => {
+    return await axiosInstance.get(`/blogs/${blogId}`).then((res) => {
+        return res.data;
+    })
+}
+
+export const updateBlog = (blogData, blogId) => {
+    return axiosInstance.patch(`/blogs/${blogId}`, blogData, setAuthHeader())
+        .then(response => response.data)
+        .catch(error => rejectPromise(error))
+}
+
+export  const getUsersBlogs = async (req) => {
+    // req means, displaying on a server, so full path OR on a browser
+    const url = '/blogs/me'
+
+    return await axiosInstance.get(url, setAuthHeader(req))
+        .then(response => response.data)
+        .catch(error => rejectPromise(error))
+}
+
+export const deleteBlog = (blogId) => {
+    return axiosInstance.delete(`/blogs/${blogId}`, setAuthHeader())
+        .then(response => response.data)
+        .catch(error => rejectPromise(error))
+}
+
+export const getBlogs = async () => {
+    return await axiosInstance.get('/blogs').then((res)=> {
+        return res.data
+    })
+}
+
+export const getBlogBySlug = async (slug) => {
+    return await axiosInstance.get(`/blogs/s/${slug}`)
+        .then((res)=> {
+            return res.data
+        })
+}

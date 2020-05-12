@@ -4,7 +4,7 @@ const jwksRsa = require('jwks-rsa'); //npm install --save jwks-rsa
 const namespace = 'http://localhost:3000/'
 
 //middleware, will check the token
-// calls in server/index.js
+// calls in server/blogEditor.js
 exports.checkJTW = jwt({
     secret: jwksRsa.expressJwtSecret({
         cache: true,

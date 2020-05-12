@@ -11,6 +11,8 @@ const config = require('./config')
 
 //portfolio
 const portfolioRoutes = require('./routes/portfolio')
+//route
+const blogRoutes = require('./routes/blog')
 
 //service
 const authService = require('./services/auth')
@@ -45,7 +47,7 @@ app.prepare().then(() => {
     server.use('/api/v1/books', bookRoutes)
 
     server.use('/api/v1/portfolios', portfolioRoutes)
-
+    server.use('/api/v1/blogs', blogRoutes)
 
     server.get('/api/v1/secret', authService.checkJTW, (req, res) => {
         return res.json(secretData)
