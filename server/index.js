@@ -34,7 +34,7 @@ const secretData = [
 
 mongoose.connect(config.DB_URL, {useNewUrlParser: true}).then(()=>console.log('i am connecting'))
     .catch((error)=>{
-        console.log(error)
+        console.error(error)
     })
 
 app.prepare().then(() => {
@@ -69,7 +69,7 @@ app.prepare().then(() => {
 
     const PORT = process.env.PORT || 3000;
     server.listen(PORT, (err) => {
-        if (err) { console.log(err); }
+        if (err) { console.error(err); }
         console.log(`> Ready on port ${PORT}`)
     })
 })

@@ -50,7 +50,7 @@ class PortfolioNew extends React.Component {
         return (
 
             <BaseLayout {...this.props.auth}>
-                <BasePage className="portfolio-create-paget-page" title={"create New portfolio"}>
+                <BasePage className="portfolio-create-page-page" title={"Créer un portfolio"}>
                     <Row>
                         <Col md="6">
                             <PortfolioCreateForm

@@ -1,30 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/zeit/next.js/tree/canary/packages/create-next-app).
+#To install depeendenes 
 
-## Getting Started
+### npm install
 
-First, run the development server:
+# To launch 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### npm run dev
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# IMPORTANT :
 
-You can start editing the page by modifying `pages/blogEditor.js`. The page auto-updates as you edit the file.
+## in server/config  you have to create a file dev.js . It's for the database
+## For exemple : 
 
-## Learn More
+### module.exports = {
+####    DB_URL : 'mongodb+srv://user:password@83@linkOnMongoDB'
+### }
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/zeit/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Then you have to add a rule on auth0 with siteOwner or adapt the code without role.

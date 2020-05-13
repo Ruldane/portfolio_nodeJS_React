@@ -15,7 +15,7 @@ class Portfolios extends React.Component {
         try {
             portfolios = await getPortfolios()
         }catch (e) {
-            console.log(e);
+            console.error(e);
         }
         return {portfolios}
     }

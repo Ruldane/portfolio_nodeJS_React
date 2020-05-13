@@ -31,7 +31,7 @@ class Auth0 {
             return jwks;
             // obtain JWKS, check JWKS on auth0.com/docs/jwks
         }catch (e) {
-            console.log(e)
+            console.error(e)
             return e;
         }
     }
@@ -45,7 +45,7 @@ class Auth0 {
                     resolve();
                 } else if (err) {
                     reject(err);
-                    console.log(err);
+                    console.error(err);
                 }
             });
         })

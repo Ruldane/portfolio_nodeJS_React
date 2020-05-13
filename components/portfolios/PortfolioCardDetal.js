@@ -18,7 +18,7 @@ class PortfolioCardDetail extends React.Component {
                         <p><b>Poste: </b>{portfolio.position}</p>
                         <p><b>Localisation: </b>{portfolio.location}</p>
                         <p><b> Date de début: </b>{moment(portfolio.startDate).format('MMMM YYYY')}</p>
-                        <p><b>Date de fin: </b>{portfolio.endDate ? moment(portfolio.endDate).format('MMMM YYYY') : 'Still Working Here'}</p>
+                        <p><b>Date de fin: </b>{portfolio.endDate ? moment(portfolio.endDate).format('MMMM YYYY') : 'Travaille toujours ici'}</p>
                     </ModalBody>
                     <ModalFooter>
                         <Button color="secondary" onClick={toggle}>Cancel</Button>

@@ -21,7 +21,6 @@ exports.checkJTW = jwt({
 
 exports.checkRole = role => (req, res, next) => {
         const user = req.user;
-        console.log(`server user ${user}`);
         if (user && (user[namespace + 'roles'] === role)) {
             next();
         } else{

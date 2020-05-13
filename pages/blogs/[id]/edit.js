@@ -22,7 +22,7 @@ class EditBlog extends React.Component {
             blog = await getBlogById(blogId)
             return {blog}
         }catch (error) {
-            console.log(error)
+            console.error(error)
         }
         return {blog}
     }
@@ -59,7 +59,6 @@ class EditBlog extends React.Component {
     }
     render () {
         const {blog} = this.props;
-        console.log(blog);
         const {isSavingBlog} = this.state;
 
         return (
