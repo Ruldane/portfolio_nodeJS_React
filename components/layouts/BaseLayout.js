@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 const BaseLayout = props => {
 
-    const {className, children, isAuthenticated, user, isSiteOwner, title, cannonical} = props;
+    const {className, children, isAuthenticated, user, isSiteOwner, title = "Portfolio Application", cannonical} = props;
     const headerType = props.headerType || 'default';
     return (
         <React.Fragment>
