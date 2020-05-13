@@ -40,7 +40,7 @@ const secretData = [
     }
 ]
 
-mongoose.connect(config.DB_URL, {useNewUrlParser: true}).then(()=>console.log('i am connecting on Mongo DB'))
+mongoose.connect(config.DB_URI, {useNewUrlParser: true}).then(()=>console.log('i am connecting on Mongo DB'))
     .catch((error)=>{
         console.error(error)
     })
