@@ -30,3 +30,4 @@ yarn-error.log*
 .env.production.local
 
 /server/config/dev.js
+/server/.next
