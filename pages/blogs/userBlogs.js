@@ -19,7 +19,7 @@ class UserBlogs extends React.Component {
         try{
             blogs = await getUsersBlogs(req);
         }catch (e) {
-            console.error(error)
+            console.error(e)
         }
         return {blogs}
     }
