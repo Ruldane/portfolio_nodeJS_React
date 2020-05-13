@@ -2,29 +2,29 @@ import React from 'react';
 import BaseLayout from '../../components/layouts/BaseLayout';
 import axios from 'axios';
 
-class Portfolio extends React.Component {
+class Posts extends React.Component {
     static async getInitialProps({query}) {
-        let post = {};
+        let posts = {};
         try {
             const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${query.id}`);
-            post = res.data;
+            posts = res.data;
         } catch (e) {
             console.error(e);
         }
-        return {portfolio: post};
+        return {posts};
     }
 
     render() {
-        const {portfolio} = this.props;
+        const {posts} = this.props;
         return (
             <BaseLayout {...this.props.auth}>
                 <h1>I am Portfolio page</h1>
-                <h1>{portfolio.title}</h1>
-                <p>BODY: {portfolio.body}</p>
-                <p>ID: {portfolio.id}</p>
+                <h1>{posts.title}</h1>
+                <p>BODY: {posts.body}</p>
+                <p>ID: {posts.id}</p>
             </BaseLayout>
         )
     }
 }
 
-export default Portfolio;
+export default Posts;

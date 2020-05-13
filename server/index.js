@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const next = require('next');
 const mongoose= require('mongoose')
 
@@ -9,7 +10,7 @@ const bookRoutes = require('./routes/book')
 //secret key
 const config = require('./config')
 
-//portfolio
+//posts
 const portfolioRoutes = require('./routes/portfolio')
 //route
 const blogRoutes = require('./routes/blog')
@@ -20,6 +21,13 @@ const authService = require('./services/auth')
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({dev});
 const handle = app.getRequestHandler();
+
+robotsOptions={
+    root: path.join(__dirname, '../public'),
+    headers: {
+        'Content-Type': 'text/plain;charset=UTF-8'
+    }
+}
 
 const secretData = [
     {
@@ -32,7 +40,7 @@ const secretData = [
     }
 ]
 
-mongoose.connect(config.DB_URL, {useNewUrlParser: true}).then(()=>console.log('i am connecting'))
+mongoose.connect(config.DB_URL, {useNewUrlParser: true}).then(()=>console.log('i am connecting on Mongo DB'))
     .catch((error)=>{
         console.error(error)
     })
@@ -45,9 +53,12 @@ app.prepare().then(() => {
     server.use(bodyParser.json())
 
     server.use('/api/v1/books', bookRoutes)
-
     server.use('/api/v1/portfolios', portfolioRoutes)
     server.use('/api/v1/blogs', blogRoutes)
+
+    server.get('/robots.txt', (req, res) => {
+        return res.status(200).sendfile('robots.txt', robotsOptions)
+    })
 
     server.get('/api/v1/secret', authService.checkJTW, (req, res) => {
         return res.json(secretData)

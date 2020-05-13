@@ -11,7 +11,7 @@ class Owner extends React.Component {
         return (
             <BaseLayout {...this.props.auth}>
                 <BasePage>
-                    <h1>Hello world for Owner</h1>
+                    <h1>Hello world for Owner page</h1>
                 </BasePage>
             </BaseLayout>
         )

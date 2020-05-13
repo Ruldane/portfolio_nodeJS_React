@@ -38,10 +38,14 @@ class Index extends React.Component {
         const {isFlipping} = this.state;
 
         return (
-            <BaseLayout className={`cover ${isFlipping ? 'cover-1' : 'cover-0'}`} {...this.props.auth} headerType={"index"}>
+            <BaseLayout
+                className={`cover ${isFlipping ? 'cover-1' : 'cover-0'}`} {...this.props.auth}
+                headerType={"index"}
+                title="Nizzoli Laurent - portfolios"
+            >
                 <div className="main-section">
                     <div className="background-image">
-                        <img src="/images/background-index.png" />
+                        <img src="/images/background-index.png" alt="Background image"/>
                     </div>
                     <Container>
                         <Row>
@@ -55,7 +59,7 @@ class Index extends React.Component {
                                                     Prenez le temps de regarder mon site web
                                                 </div>
                                             </div>
-                                            <img className="image" src="/images/section-1.png"/>
+                                            <img className="image" src="/images/section-1.png" alt="Guy programming welcome picture face"/>
                                             <div className="shadow-custom ">
                                                 <div className="shadow-inner"> </div>
                                             </div>
@@ -68,7 +72,7 @@ class Index extends React.Component {
                                                    Top professionnal in web development
                                                 </div>
                                             </div>
-                                            <img className="image" src="/images/section-2.png"/>
+                                            <img className="image" src="/images/section-2.png" alt="Guy programming welcome picture back"/>
                                             <div className="shadow-custom shadow-custom-2">
                                                 <div className="shadow-inner"> </div>
                                             </div>
@@ -97,14 +101,17 @@ class Index extends React.Component {
                                         cursorChar="|"
                                         />
                                 <div className="hero-welcome-bio">
-                                    <h1>
+                                    <h2>
                                         {isAuthenticated && <span><br/><b><p>Bonjour {user.name} </p><br/></b></span>}
                                         N'hésitez pas à me contacter pour plus d'informations
-                                    </h1>
+                                    </h2>
                                 </div>
                             </Col>
                         </Row>
                     </Container>
+                    <span>
+                        <a href="https://www.vecteezy.com/free-vector/programming" className="service-link">Programming Vectors by Vecteezy</a>
+                    </span>
                 </div>
             </BaseLayout>
         )

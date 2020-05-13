@@ -27,7 +27,7 @@ class Portfolios extends React.Component {
 
     displayDeleteWarning (portfolioId, event) {
         event.stopPropagation();
-        const isConfirm = confirm('Êtes-vous sûr de vouloir supprimer ce portfolio?');
+        const isConfirm = confirm('Êtes-vous sûr de vouloir supprimer ce posts?');
         if (isConfirm){
             this.deletePortfolio(portfolioId)
         }
@@ -66,7 +66,7 @@ class Portfolios extends React.Component {
         const {isAuthenticated, isSiteOwner} = this.props.auth;
         return (
 
-            <BaseLayout {...this.props.auth}>
+            <BaseLayout {...this.props.auth} title="Laurent Nizzoli - Expériences professionnelles">
                 <BasePage className="portfolio-page" title={"Portfolios"}>
                     {isAuthenticated && isSiteOwner &&
                     <Button color="success"

@@ -28,7 +28,7 @@ class UserBlogs extends React.Component {
         try {
             updateBlog( {status}, blogId)
                 .then(() => {
-                    Router.push('/blogs/userblogs');
+                    Router.push('/blogs/userBlogs');
                 })
 
         }catch (error) {

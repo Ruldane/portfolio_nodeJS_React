@@ -50,7 +50,7 @@ class Blogs extends React.Component {
             <BaseLayout headerType={'landing'}
                         className="blog-listing-page"
                         {...this.props.auth}
-                        title="Laurent Nizzoli - Newest Blogs to Read">
+                        title="Laurent Nizzoli - Nouveaux articles à lire">
                 <div className="masthead" style={{"backgroundImage": "url('/images/home-bg.jpg')"}}>
 
                 <div className="overlay"></div>
@@ -58,7 +58,7 @@ class Blogs extends React.Component {
                         <div className="row">
                             <div className="col-lg-8 col-md-10 mx-auto">
                                 <div className="site-heading">
-                                    <h1>Fresh Blogs</h1>
+                                    <h1>Nouveau blog </h1>
                                     <span className="subheading">Programming, travelling...</span>
                                 </div>
                             </div>

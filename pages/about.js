@@ -8,13 +8,13 @@ class About extends React.Component {
 
     render() {
         return (
-            <BaseLayout  {...this.props.auth}>
+            <BaseLayout  {...this.props.auth} title="À propos">
                 <BasePage className="about-page" >
                     <Row className="mt-5">
                         <Col md="6">
-                            <img src="/images/Nizzoli-Laurent.jpg" alt="me" className="picture-of-me"/>
+                            <img src="/images/Nizzoli-Laurent.jpg" alt="photo de Laurent Nizzoli"  className="picture-of-me"/>
                             <div className="left-side">
-                                <h1 className="title fadein">À PROPOS </h1>
+                                <h1 className="title fadein">À PROPOS de moi</h1>
                                 <h4 className="subtitle fadein">Un développeur web passionné</h4>
                                 <p className="subsubTitle fadein">Voici mon parcours</p>
                             </div>

@@ -7,15 +7,29 @@ import { ToastContainer } from 'react-toastify';
 
 const BaseLayout = props => {
 
-    const {className, children, isAuthenticated, user, isSiteOwner} = props;
+    const {className, children, isAuthenticated, user, isSiteOwner, title, cannonical} = props;
     const headerType = props.headerType || 'default';
     return (
         <React.Fragment>
             <Head>
-                <title>Laurent Nizzoli</title>
+                <title>{title}</title>
+                <meta name="description" content="
+                Passionné d’informatique et de
+                nouvelles technologies depuis
+                toujours, le monde du web est un
+                domaine fascinant. Autodidacte et
+                en reconversion professionnelle je
+                m’adapte très rapidement." />
+                <meta name="keywords" content="nizzoli Portfolio, nizzoli développeur web, nizzoli expériences professionnelles, nizzoli blog"/>
+                <meta property="og:title" content="Nizzoli Laurent - développeur, développeur web, bloger"/>
+                <meta property="og:locale" content="fr_EU"/>
+                <meta property="og:url" content="http://localhost:3000"/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:description" content="Développeur Web ReactJS et NodeJS"/>
+                {cannonical && <Link rel="cannonical" href={`http://localhost:3000${cannonical}`}/>}
+                <link rel="icon" type="image/ico" href="/favicon.ico"/>
                 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-                      rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet" />
             </Head>
 
             <div className="layout-container">
