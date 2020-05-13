@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 require('react-datepicker/dist/react-datepicker.css')
 
-const namespace = 'http://localhost:3000'
+// const namespace = 'http://localhost:3000'
 
 class App extends React.Component {
 
@@ -18,7 +18,7 @@ class App extends React.Component {
             pageProps = await Component.getInitialProps(ctx);
         }
 
-        const isSiteOwner = user && user[namespace+'/roles'] === 'siteOwner';
+        const isSiteOwner = user && user[process.env.NAMESPACE+'/roles'] === 'siteOwner';
 
         const auth = {user, isAuthenticated: !!user, isSiteOwner}
 

@@ -1,7 +1,6 @@
 const jwt = require('express-jwt'); // npm install express-jwt
 const jwksRsa = require('jwks-rsa'); //npm install --save jwks-rsa
 
-const namespace = 'http://localhost:3000/'
 
 //middleware, will check the token
 // calls in server/blogEditor.js
@@ -21,7 +20,7 @@ exports.checkJTW = jwt({
 
 exports.checkRole = role => (req, res, next) => {
         const user = req.user;
-        if (user && (user[namespace + 'roles'] === role)) {
+        if (user && (user[process.env.NAMESPACE + '/roles'] === role)) {
             next();
         } else{
             return res.status(401).send({title: 'Not Authorizerd', detail: 'Not authorized to access this data'})

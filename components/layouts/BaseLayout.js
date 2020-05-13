@@ -23,10 +23,10 @@ const BaseLayout = props => {
                 <meta name="keywords" content="nizzoli Portfolio, nizzoli développeur web, nizzoli expériences professionnelles, nizzoli blog"/>
                 <meta property="og:title" content="Nizzoli Laurent - développeur, développeur web, bloger"/>
                 <meta property="og:locale" content="fr_EU"/>
-                <meta property="og:url" content="http://localhost:3000"/>
+                <meta property="og:url" content={`${process.env.NAMESPACE}`}/>
                 <meta property="og:type" content="website"/>
                 <meta property="og:description" content="Développeur Web ReactJS et NodeJS"/>
-                {cannonical && <Link rel="cannonical" href={`http://localhost:3000${cannonical}`}/>}
+                {cannonical && <Link rel="cannonical" href={`${process.env.NAMESPACE}${cannonical}`}/>}
                 <link rel="icon" type="image/ico" href="/favicon.ico"/>
                 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet" />
