@@ -14,7 +14,7 @@ class About extends React.Component {
                         <Col md="6">
                             <img src="/images/Nizzoli-Laurent.jpg" alt="photo de Laurent Nizzoli"  className="picture-of-me"/>
                             <div className="left-side">
-                                <h1 className="title fadein">À PROPOS de moi</h1>
+                                <h1 className="title fadein">À props de moi</h1>
                                 <h4 className="subtitle fadein">Un développeur web passionné</h4>
                                 <p className="subsubTitle fadein">Voici mon parcours</p>
                             </div>
