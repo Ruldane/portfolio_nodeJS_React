@@ -27,9 +27,9 @@ class App extends React.Component {
         return { pageProps, auth };
     }
 
-    componentDidMount () {
+/*    componentDidMount () {
         Fonts();
-    }
+    }*/
 
     render() {
         const { Component, pageProps, auth } = this.props;
