@@ -40,7 +40,7 @@ class UserBlogs extends React.Component {
         const res = confirm('Are you sure you want to delete this blog post ?');
         if (res)  {
             this.deleteBlog(blogId);
-            Router.push('/blogs/userblogs');
+            Router.push('/blogs/userBlogs');
         }
     }
 
