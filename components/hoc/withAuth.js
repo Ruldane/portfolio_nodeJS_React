@@ -2,8 +2,6 @@ import React from 'react';
 import BaseLayout from '../layouts/BaseLayout';
 import BasePage from '../BasaPage';
 
-//const namespace= 'http://localhost:3000/'
-
 export default function (Component, role) {
     return class withAuth extends React.Component {
 
