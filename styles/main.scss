@@ -14,10 +14,16 @@
 @import "./slate-editor";
 @import "./_cv.scss";
 
+.montserrat-loaded{
+  html, body {
+    font-family: 'Montserrat', 'Helvetica' !important;
+  }
+}
+
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'Montserrat', 'Helvetica' !important;
+  font-family: 'Helvetica';
 }
 
 .self-typed{
