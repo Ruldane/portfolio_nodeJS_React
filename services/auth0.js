@@ -68,7 +68,7 @@ class Auth0 {
 
         this.auth0.logout({
             // redirect to home page
-            returnTo: '',
+            returnTo: process.env.BASE_URL,
             clientID: CLIENT_ID,
         })
     }
