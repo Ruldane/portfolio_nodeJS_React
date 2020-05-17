@@ -31,7 +31,7 @@ exports.savePortfolio = (req, res)=> {
 exports.getPortfolio = (req, res) => {
     // {} means all portfolio
     Portfolio.find({})
-        .sort({'startDate': 1})
+        .sort({'startDate': -1})
         .exec((error, allPortfolios)=> {
             if (error){
                 return res.status(422).send(error)
