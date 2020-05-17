@@ -23,23 +23,12 @@ class Projects extends React.Component {
         return {projects}
     }
 
-    navigateToHomePage = (event) => {
-        event.stopPropagation();
-        Router.push(``)
-    }
-
     renderProject(projects) {
         const {isAuthenticated, isSiteOwner} = this.props.auth;
 
         return projects.map((project, index) =>
             <Col md="4" key={index}>
-                <GridProject project={project}>
-                    { isAuthenticated && isSiteOwner &&
-                    <React.Fragment>
-                        <Button onClick={(event) => this.navigateToEdit(event)} color="warning">home page</Button>{' '}
-                    </React.Fragment>
-                    }
-                </GridProject>
+                <GridProject project={project} />
             </Col>
         )
     }
