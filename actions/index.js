@@ -118,3 +118,22 @@ export const getBlogBySlug = async (slug) => {
             return res.data
         })
 }
+
+export const createProject =  async (projectData) => {
+
+    return axiosInstance.post('/api/v1/portfolios', projectData, setAuthHeader())
+        .then((res) => {
+            return res.data
+        }).catch((error)=> {
+            return rejectPromise(error)
+        })
+}
+
+export  const getProjects = async () => {
+    // req means, displaying on a server, so full path OR on a browser
+    const url =  '/api/v1/projects'
+
+    return await axiosInstance.get(url).then((res) => {
+        return res.data;
+    });
+}

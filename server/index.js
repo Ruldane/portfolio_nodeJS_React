@@ -11,10 +11,10 @@ const bookRoutes = require('./routes/book')
 //secret key
 const config = require('./config')
 
-//posts
+//routes
 const portfolioRoutes = require('./routes/portfolio')
-//route
 const blogRoutes = require('./routes/blog')
+const projectRoutes = require('./routes/project')
 
 //service
 const authService = require('./services/auth')
@@ -55,6 +55,7 @@ app.prepare().then(() => {
     server.use('/api/v1/books', bookRoutes)
     server.use('/api/v1/portfolios', portfolioRoutes)
     server.use('/api/v1/blogs', blogRoutes)
+    server.use('/api/v1/projects', projectRoutes)
 
     server.get('/robots.txt', (req, res) => {
         return res.status(200).sendfile('robots.txt', robotsOptions)

@@ -13,7 +13,7 @@ exports.getPortfolioById = (req,res) => {
         })
 }
 
-// save book
+// save portfolio
 exports.savePortfolio = (req, res)=> {
     const portfolioData = req.body;
     const userId = req.user && req.user.sub;
@@ -28,9 +28,8 @@ exports.savePortfolio = (req, res)=> {
     })
 }
 
-// get book
 exports.getPortfolio = (req, res) => {
-    // {} means all book
+    // {} means all portfolio
     Portfolio.find({})
         .sort({'startDate': 1})
         .exec((error, allPortfolios)=> {
